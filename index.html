@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Neetlinks</title>
+  
+  <!-- Google Fonts & Bootstrap Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="design.css" />
+</head>
+<body>
+  <div class="menu" id="top-bar">
+    <div class="branding">
+      <img src="img/chain.png" alt="neetlink-logo" />
+      <h1>Neetlinks</h1>
+    </div>
+    <div class="navigations">
+      <button class="nav-btn active" data-target="home">Home</button>
+      <button class="nav-btn" data-target="links">My Links</button>
+      <button class="nav-btn" data-target="about">About</button>
+    </div>
+  </div>
+
+  <div class="content-container">
+    <div class="content-section active" id="home">
+      <div class="container">
+        <div class="welcome-message">
+          <h2>✨ Save your favorite links and access them anytime ✨</h2>
+          <p class="subtext">Your personal bookmark manager that works right in your browser</p>
+        </div>
+        <div class="link-box">
+          <div class="input-group">
+            <i class="bi bi-link-45deg"></i>
+            <input type="text" id="linkInput" placeholder="Paste the link here" />
+          </div>
+          <button class="save-btn" onclick="addLink()">
+            <i class="bi bi-save"></i> Save URL
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-section" id="links">
+      <div class="saved-link-container">
+        <div class="section-header">
+          <i class="bi bi-bookmark-heart"></i>
+          <h3>Saved Links</h3>
+        </div>
+        <ul id="linkList"></ul>
+      </div>
+    </div>
+
+    <div class="content-section" id="about">
+      <div class="about-section">
+        <div class="section-header">
+          <i class="bi bi-info-circle"></i>
+          <h3>Welcome to Neetlinks</h3>
+        </div>
+        <p>Neetlinks is a simple and clean tool to save links you care about. Whether you're a reader, developer, or casual user—this tool makes sure your favorite pages are just a click away.</p>
+        <div class="features">
+          <div class="feature">
+            <i class="bi bi-cloud-check"></i>
+            <p>Saved in your browser</p>
+          </div>
+          <div class="feature">
+            <i class="bi bi-lightning"></i>
+            <p>Lightning fast access</p>
+          </div>
+          <div class="feature">
+            <i class="bi bi-lock"></i>
+            <p>No account needed</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
