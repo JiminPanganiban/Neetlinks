@@ -36,6 +36,11 @@ function addLink() {
   
   // Switch to My Links tab after saving
   document.querySelector('.nav-btn[data-target="links"]').click();
+  
+  // Add visual feedback
+  const saveBtn = document.querySelector('.save-btn');
+  saveBtn.classList.add('pulse');
+  setTimeout(() => saveBtn.classList.remove('pulse'), 300);
 }
 
 function deleteLink(index) {
@@ -49,7 +54,16 @@ function deleteLink(index) {
 
 function copyLink(url) {
   navigator.clipboard.writeText(url).then(() => {
-    alert("Link copied to clipboard!");
+    // Visual feedback
+    const copyBtns = document.querySelectorAll('.copy-btn');
+    copyBtns.forEach(btn => {
+      if (btn.dataset.url === url) {
+        btn.innerHTML = '<i class="fas fa-check"></i>';
+        setTimeout(() => {
+          btn.innerHTML = '<i class="fas fa-copy"></i>';
+        }, 1000);
+      }
+    });
   });
 }
 
@@ -76,11 +90,11 @@ function renderLinks() {
     li.innerHTML = `
       <a href="${url}" target="_blank">${url}</a>
       <div class="action-btns">
-        <button class="action-btn copy-btn" onclick="copyLink('${url}')">
-          <i class="bi bi-clipboard"></i> Copy
+        <button class="action-btn copy-btn" onclick="copyLink('${url}')" data-url="${url}">
+          <i class="fas fa-copy"></i>
         </button>
         <button class="action-btn delete-btn" onclick="deleteLink(${index})">
-          <i class="bi bi-trash"></i> Delete
+          <i class="fas fa-trash"></i>
         </button>
       </div>
     `;
