@@ -32,7 +32,30 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
+// Home Click (logo and name)
+document.getElementById('branding').addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  // Remove active class from all buttons
+  document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+  
+  // Add active to home button
+  document.querySelector('.nav-btn[data-target="home"]').classList.add('active');
+  
+  // Show home section
+  document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+  document.getElementById('home').classList.add('active');
+  
+  // Close mobile menu if open
+  if (window.innerWidth < 600) {
+    document.getElementById('nav-wrapper').classList.remove('active');
+    document.getElementById('overlay').classList.remove('active');
+    document.getElementById('hamburger').innerHTML = '<i class="fas fa-bars"></i>';
+  }
+  
+  // Scroll to top if needed
+  window.scrollTo(0, 0);
+});
 
 
 

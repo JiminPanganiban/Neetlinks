@@ -36,10 +36,14 @@ body {
 }
 
 .branding {
+  cursor: pointer; /* Makes it look clickable */
   display: flex;
   align-items: center;
   gap: 12px;
   z-index: 1001;
+  /* Remove any text-decoration if needed */
+  text-decoration: none;
+  color: inherit;
 }
 
 #top-bar img {
