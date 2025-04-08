@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Neetlinks</title>
+  <link rel="icon" href="img/nu.ico" type="image/x-icon">
   
   <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
@@ -19,27 +20,36 @@
       <img src="img/nu.png" alt="neetlink-logo" />
       <h1>Neetlinks</h1>
     </div>
-    <div class="navigations">
-      <button class="nav-btn active" data-target="home">
-        <i class="fas fa-home"></i>
-        <span>Home</span>
-      </button>
-      <button class="nav-btn" data-target="links">
-        <i class="fas fa-bookmark"></i>
-        <span>My Links</span>
-      </button>
-      <button class="nav-btn" data-target="about">
-        <i class="fas fa-info-circle"></i>
-        <span>About</span>
-      </button>
+    
+    <button class="hamburger" id="hamburger">
+      <i class="fas fa-bars"></i>
+    </button>
+    
+    <div class="nav-wrapper" id="nav-wrapper">
+      <div class="navigations" id="navigations">
+        <button class="nav-btn active" data-target="home">
+          <i class="fas fa-home"></i>
+          <span>Home</span>
+        </button>
+        <button class="nav-btn" data-target="links">
+          <i class="fas fa-bookmark"></i>
+          <span>My Links</span>
+        </button>
+        <button class="nav-btn" data-target="about">
+          <i class="fas fa-info-circle"></i>
+          <span>About</span>
+        </button>
+      </div>
     </div>
   </div>
+
+  <div class="overlay" id="overlay"></div>
 
   <div class="content-container">
     <div class="content-section active" id="home">
       <div class="container">
         <div class="welcome-message">
-          <h2> Save your favorite links and access them anytime. </h2>
+          <h2>Save your favorite links and access them anytime.</h2>
           <p class="subtext">Your personal bookmark manager that works right in your browser</p>
         </div>
         <div class="link-box">

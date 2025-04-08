@@ -1,0 +1,154 @@
+/* ========== MEDIA QUERIES ========== */
+
+/* Mobile styles (up to 599px) */
+@media only screen and (max-width: 599px) {
+    #top-bar {
+      padding: 12px 5%;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    .nav-wrapper {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 70%;
+      height: 100vh;
+      background: white;
+      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+      transition: right 0.3s ease;
+      padding-top: 70px;
+      z-index: 1000;
+    }
+  
+    .nav-wrapper.active {
+      right: 0;
+    }
+  
+    .navigations {
+      flex-direction: column;
+      gap: 0;
+      width: 100%;
+    }
+  
+    .nav-btn {
+      width: 100%;
+      padding: 15px 20px;
+      border-radius: 0;
+      justify-content: flex-start;
+      border-bottom: 1px solid var(--gray);
+    }
+  
+    .content-container {
+      padding: 1rem 5%;
+    }
+  
+    .container, .saved-link-container, .about-section {
+      padding: 1.5rem;
+    }
+  
+    .welcome-message h2 {
+      font-size: 1.5rem;
+    }
+  
+    .features {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+  }
+  
+  /* Small tablets and large phones (600px and up) */
+  @media only screen and (min-width: 600px) {
+    .hamburger {
+      display: none;
+    }
+  
+    .nav-wrapper {
+      position: static;
+      width: auto;
+      height: auto;
+      background: transparent;
+      box-shadow: none;
+      padding-top: 0;
+    }
+  
+    .navigations {
+      flex-direction: row;
+    }
+  
+    .nav-btn {
+      width: auto;
+      padding: 8px 16px;
+      border-bottom: none;
+      justify-content: center;
+    }
+  
+    .content-container {
+      padding: 1.5rem 5%;
+    }
+  
+    .container, .saved-link-container, .about-section {
+      padding: 2rem;
+    }
+  
+    .welcome-message h2 {
+      font-size: 1.8rem;
+    }
+  
+    .features {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+  }
+  
+  /* Tablets and small desktops (768px and up) */
+  @media only screen and (min-width: 768px) {
+    .nav-btn {
+      font-size: 1.1rem;
+      gap: 8px;
+    }
+  
+    .content-container {
+      padding: 2rem 5%;
+    }
+  
+    .welcome-message h2 {
+      font-size: 2rem;
+    }
+  
+    .section-header h3 {
+      font-size: 1.5rem;
+    }
+  }
+  
+  /* Large desktops (1024px and up) */
+  @media only screen and (min-width: 1024px) {
+    #top-bar {
+      padding: 15px 10%;
+    }
+  
+    .content-container {
+      padding: 2rem 10%;
+    }
+  
+    .container, .saved-link-container, .about-section {
+      max-width: 900px;
+    }
+  }
+  
+  /* Extra large desktops (1440px and up) */
+  @media only screen and (min-width: 1440px) {
+    #top-bar {
+      padding: 15px 15%;
+    }
+  
+    .content-container {
+      padding: 2rem 15%;
+    }
+  
+    .container, .saved-link-container, .about-section {
+      max-width: 1000px;
+    }
+  }

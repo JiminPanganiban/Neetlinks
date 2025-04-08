@@ -1,4 +1,42 @@
-// script.js
+// Collapsed hamburger on mobile
+document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.getElementById('hamburger');
+  const navWrapper = document.getElementById('nav-wrapper');
+  const overlay = document.createElement('div');
+  overlay.className = 'overlay';
+  document.body.appendChild(overlay);
+
+  hamburger.addEventListener('click', function() {
+    navWrapper.classList.toggle('active');
+    overlay.classList.toggle('active');
+    hamburger.innerHTML = navWrapper.classList.contains('active') 
+      ? '<i class="fas fa-times"></i>' 
+      : '<i class="fas fa-bars"></i>';
+  });
+
+  overlay.addEventListener('click', function() {
+    navWrapper.classList.remove('active');
+    overlay.classList.remove('active');
+    hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+  });
+
+  // Close menu when a nav item is clicked (for mobile)
+  document.querySelectorAll('.nav-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      if (window.innerWidth < 600) {
+        navWrapper.classList.remove('active');
+        overlay.classList.remove('active');
+        hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+      }
+    });
+  });
+});
+
+
+
+
+
+
 const linkInput = document.getElementById("linkInput");
 const linkList = document.getElementById("linkList");
 const navBtns = document.querySelectorAll(".nav-btn");
